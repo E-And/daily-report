@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import models.Employee;
-import urils.DBUtil;
+import utils.DBUtil;
 
 public class EmployeeValidator {
     public static List<String> validate(Employee e, Boolean code_duplicate_check_flag, Boolean password_check_flag) {
