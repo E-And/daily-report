@@ -9,6 +9,11 @@ public class ReportValidator {
     public static List<String> validate(Report r) {
         List<String> errors = new ArrayList<String>();
 
+        String title_error = _validateTitle(r.getTitle());
+        if(!title_error.equals("")) {
+            errors.add(title_error);
+        }
+
         String content_error = _validateContent(r.getContent());
         if(!content_error.equals("")) {
             errors.add(content_error);
@@ -19,7 +24,8 @@ public class ReportValidator {
 
     private static String _validateTitle(String title) {
         if(title == null || title.equals("")) {
-        }
+            return "タイトルを入力してください。";
+            }
 
         return "";
     }
@@ -31,5 +37,4 @@ public class ReportValidator {
 
         return "";
     }
-
 }
